@@ -6,7 +6,7 @@ min(dat$Sepal.Length)
 max(dat$Sepal.Length)
 
 #use fuction
-range2 <- fuction(x) {
+range2 <- function(x) {
   range <- max(x)-min(x)
   return(range)
 }
@@ -23,4 +23,12 @@ boxplot(dat$Sepal.Length ~ dat$Species)
 
 install.packages("car")
 library(car)
-qqplot(dat$Sepal.Length)
+qqPlot(dat$Sepal.Length)
+
+install.packages("ggplot2")
+
+library(ggplot2)
+ggplot(dat) +
+  aes(x = Sepal.Length) +
+  geom_histogram(bins = 20)
+
