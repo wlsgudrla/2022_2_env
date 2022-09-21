@@ -32,6 +32,12 @@ ggplot(dat) +
   aes(x = Sepal.Length) +
   geom_histogram(bins = 20)
 
+ggplot(dat) +
+  aes(x = Sepal.Length, y = Petal.Length, colour = Species) +
+  geom_point() +
+  scale_color_hue()
+
+
 dat <- read.csv(file = "C:/Users/user/Desktop/R studio/Rawdata/jooam.csv")
 head(dat)
 str(dat)
@@ -102,21 +108,21 @@ head(dat)
 
 ggplot(dat) +
   aes(x = COD) +
-  geom_histogram(bins = 10)
+  geom_histogram(bins = 30)
 
-ggplot(dc_dat) +
-  aes(x = Site, y = Chl.a) +
+ggplot(dat) +
+  aes(x = COD, y = BOD) +
   geom_boxplot()
 
-ggplot(dc_dat) +
-  aes(x = Chl.a, y = T.P) +
+ggplot(dat) +
+  aes(x = COD, y = TOC) +
   geom_point()
 
-ggplot(dc_dat) +
-  aes(x = Chl.a, y = T.P, colour = Site) +
+ggplot(dat) +
+  aes(x = COD, y = DO, colour = TN) +
   geom_point() +
   scale_color_hue()
 
 ggplot(dat) +
-  aes(x = Chla) +
+  aes(x = COD) +
   geom_density()
